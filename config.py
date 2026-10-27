@@ -1,5 +1,13 @@
-## spotify Lab
 
-CLIENT_ID = "2303604405624f4696f1efd75ff6b969"
-CLIENT_SECRET = "6b96185e1490418aa71ccb9724461a0f"
 
+"""Application configuration loaded from environment variables."""
+
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).resolve().parent / ".env")
+
+CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
+CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
